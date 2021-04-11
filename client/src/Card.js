@@ -1,6 +1,6 @@
 function Card({movieName}) {
     return (
-        <div>
+        <div id="card">
             { movieName }
         </div>
     );

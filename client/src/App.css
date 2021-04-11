@@ -42,3 +42,21 @@
   cursor: pointer;
 }
 
+#card {
+  background-color: red;
+  width: 30vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: calc(30px + 2vmin);
+}
+
+#card-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+

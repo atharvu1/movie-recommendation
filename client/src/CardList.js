@@ -1,7 +1,7 @@
 import Card from './Card'
 function CardList() {
     return(
-        <div>
+        <div id = "card-list">
             <Card movieName = {"Thor"}/>
             <Card movieName = {"Iron Man"}/>
             <Card movieName = {"Avengers"}/>
