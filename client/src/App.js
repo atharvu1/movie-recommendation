@@ -32,15 +32,14 @@ function App() {
         <TextField 
           id="outlined-basic" 
           label="Search of related movies" 
-          variant="outlined" 
-          size="medium" 
+          variant="outlined"  
           onChange={ (e) => setMovieName(e.target.value) }
         />
         <img 
           id="search-icon"
           src={SearchIcon} 
           alt="Search Icon" 
-          style={{ height: 53, width: 36 }}
+          style={{ height: 57, width: 40 }}
           onClick = {handleSubmit}
         />
       </form>

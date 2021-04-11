@@ -32,10 +32,16 @@
 #outlined-basic{
   background-color: white;
   width: 30vw;
+  min-height: 20px;
 }
 
 #search-icon{
-  margin-left: 1em;
+  /* margin-left: 1em; */
+  background-color: red;
+  padding-left: 50px;
+  padding-right: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #search-icon:hover{
@@ -58,5 +64,9 @@
   align-items: center;
   justify-content: center;
   
+}
+
+#form {
+  margin-bottom: 10em;
 }
 
