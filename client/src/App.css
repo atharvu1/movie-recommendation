@@ -31,5 +31,14 @@
 
 #outlined-basic{
   background-color: white;
-  text-decoration: none;
+  width: 30vw;
 }
+
+#search-icon{
+  margin-left: 1em;
+}
+
+#search-icon:hover{
+  cursor: pointer;
+}
+

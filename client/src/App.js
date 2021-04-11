@@ -7,7 +7,13 @@ import SearchIcon from './search.svg'
 function App() {
   const [movieName, setMovieName] = useState("");
   const handleSubmit = async () => {
-    console.log(movieName);
+    if(movieName.length){
+      console.log(movieName);
+    }
+      
+    else{
+      console.log("Empty fields not accepted")
+    }
     // const res = await Axios.post("http://127.0.0.1:5000/get_sentiment", { text }, {
     //   headers: {
     //     'Access-Control-Allow-Origin': '*',
@@ -22,7 +28,7 @@ function App() {
       <header className="App-header">
         Movie Recommendation System
       </header>
-      <form noValidate autoComplete="off">
+      <form noValidate autoComplete="off" id = "form">
         <TextField 
           id="outlined-basic" 
           label="Search of related movies" 
