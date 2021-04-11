@@ -54,7 +54,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  font-size: calc(30px + 2vmin);
+  font-size: calc(20px + 1.5vmin);
 }
 
 #card-list {
@@ -67,6 +67,11 @@
 }
 
 #form {
-  margin-bottom: 10em;
+  margin-bottom: 5em;
+}
+
+#error_message {
+  color: white;
+  font-size: large;
 }
 

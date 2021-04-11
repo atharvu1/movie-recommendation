@@ -2,10 +2,13 @@ import './App.css';
 import React, { useState } from "react";
 import CardList from './CardList';
 import TextField from '@material-ui/core/TextField';
+import Axios from 'axios';
 import SearchIcon from './search.svg'
 
 function App() {
   const [movieName, setMovieName] = useState("");
+  const [movieList, setMovieList] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
   const handleSubmit = async () => {
     if(movieName.length){
       console.log(movieName);
@@ -14,13 +17,23 @@ function App() {
     else{
       console.log("Empty fields not accepted")
     }
-    // const res = await Axios.post("http://127.0.0.1:5000/get_sentiment", { text }, {
-    //   headers: {
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   }
-    // });
+    const res = await Axios.post("http://127.0.0.1:5000/get_movie_list", { movieName }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
+    });
+
+    console.log(res.data)
+    if(res.data.search_code === 200){
+      setMovieList(res.data.movie_list);
+      setErrorMessage("")
+    }
+    else{
+      setErrorMessage(res.data.message)
+      setMovieList({});
+    }
     
   }
   return (
@@ -43,7 +56,10 @@ function App() {
           onClick = {handleSubmit}
         />
       </form>
-      <CardList/>
+      {
+        errorMessage.length > 0 ? <div id = "error_message"> { errorMessage } </div> : <CardList movieList = {movieList} />
+      }
+      
     </div>
   );
 }

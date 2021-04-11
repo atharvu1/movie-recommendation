@@ -1,12 +1,14 @@
 import Card from './Card'
-function CardList() {
+function CardList( { movieList } ) {
+    console.log(movieList)
     return(
         <div id = "card-list">
-            <Card movieName = {"Thor"}/>
-            <Card movieName = {"Iron Man"}/>
-            <Card movieName = {"Avengers"}/>
-            <Card movieName = {"Black Widow"}/>
-            <Card movieName = {"Justice League"}/>
+            {
+                movieList.length > 0 && movieList.map( movie => (
+                    <Card movieName = {movie}/>
+                ))
+                
+            }
         </div>
     )
 }
