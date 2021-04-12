@@ -29,6 +29,7 @@ def analyse_text():
         data = request.data.decode('UTF-8')
         loaded_movie_name = json.loads(data)
         movie_name = loaded_movie_name['movieName']
+        movie_name = movie_name.title()
         n_movies_to_reccomend = 10
 
         movie_list = movies[movies['title'].str.contains(movie_name)] 
